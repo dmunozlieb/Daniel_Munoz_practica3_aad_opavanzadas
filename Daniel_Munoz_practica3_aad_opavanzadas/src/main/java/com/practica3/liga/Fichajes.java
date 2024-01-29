@@ -8,13 +8,13 @@ import org.apache.logging.log4j.Logger;
 
 import com.practica3.model.Equipo;
 import com.practica3.model.Jugador;
-import com.practica3.service.GestionEquipo;
+import com.practica3.service.GestionEntity;
 
 
 public class Fichajes <T>{
 	
 	private static final Logger LOGGER = LogManager.getLogger(Fichajes.class);
-	private GestionEquipo <T> gestion = new GestionEquipo<>();
+	private GestionEntity <T> gestion = new GestionEntity<>();
 	private static final DateTimeFormatter PATTERN = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
 	public void fichajesTemporada() {

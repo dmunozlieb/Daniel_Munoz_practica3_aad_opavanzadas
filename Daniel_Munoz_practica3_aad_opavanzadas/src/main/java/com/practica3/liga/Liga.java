@@ -11,7 +11,7 @@ import com.practica3.model.Clasificacion;
 import com.practica3.model.Equipo;
 import com.practica3.model.Partido;
 import com.practica3.service.DataPersist;
-import com.practica3.service.GestionEquipo;
+import com.practica3.service.GestionEntity;
 
 public class Liga {
 
@@ -20,7 +20,7 @@ public class Liga {
 	private static List<Clasificacion> clasificacion = new ArrayList<>();
 	private static StringBuilder sb;
 	private static DataPersist persistencia;
-	private static GestionEquipo<Object> gestion;
+	private static GestionEntity<Object> gestion;
 
 	public static void ejecutarLiga() {
 		inicializarGestionYPersistencia();
@@ -36,7 +36,7 @@ public class Liga {
 	}
 	
 	private static void inicializarGestionYPersistencia() {
-	    gestion = new GestionEquipo<>();
+	    gestion = new GestionEntity<>();
 	    persistencia = new DataPersist();
 	    persistencia.dataPersist();
 	}

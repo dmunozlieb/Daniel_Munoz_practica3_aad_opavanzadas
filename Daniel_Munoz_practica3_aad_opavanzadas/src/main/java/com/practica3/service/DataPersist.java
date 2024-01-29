@@ -20,8 +20,9 @@ public class DataPersist {
 
 //	private static EntityManager entitymanager = ConnectJPA.getEntityManager();
 	private static final Logger LOGGER = LogManager.getLogger(DataPersist.class);
-	private static GestionEquipo<Object> gestion = new GestionEquipo<>();
-
+	private static GestionEntity<Object> gestion = new GestionEntity<>();
+	 
+	
 	public void dataPersist() {
 		try {
 			persistEquipos();
@@ -80,6 +81,7 @@ public class DataPersist {
 			for (Clasificacion clasificacion : nueva_clasificacion) {
 				gestion.update(clasificacion);
 			}
+			ClasificacionService.aportar_renumeracion();
 		} catch (PersistenceException persistence) {
 			LOGGER.error("Error - " + persistence.getMessage());
 		} catch (Exception e) {

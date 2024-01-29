@@ -15,9 +15,9 @@ import jakarta.persistence.PersistenceException;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
-public class GestionEquipo<T> implements GestionDAO<T> {
+public class GestionEntity<T> implements GestionDAO<T> {
 
-	private static final Logger LOGGER = LogManager.getLogger(GestionEquipo.class);
+	private static final Logger LOGGER = LogManager.getLogger(GestionEntity.class);
 
 	@Override
 	public void insert(T o1) {
