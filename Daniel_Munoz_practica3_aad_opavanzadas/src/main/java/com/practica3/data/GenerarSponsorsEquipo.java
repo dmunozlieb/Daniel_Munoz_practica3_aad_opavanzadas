@@ -6,21 +6,20 @@ import java.util.List;
 import com.practica3.model.Patrocinador;
 
 public class GenerarSponsorsEquipo {
-	private static HashMap<String, List<Patrocinador>> sponsorsEquipo = new HashMap<String, List<Patrocinador>>();
+	private static HashMap<Integer, List<Patrocinador>> sponsorsEquipo = new HashMap<Integer, List<Patrocinador>>();
 	
 	static {
-		sponsorsEquipo.put("BARÇA", List.of(GenerarSponsors.sponsorAdidas(), GenerarSponsors.sponsorStar(), GenerarSponsors.sponsorVital()
-				,GenerarSponsors.sponsorEnergy()));
-		sponsorsEquipo.put("BIDASOA IRUN", List.of(GenerarSponsors.sponsorPuma(), GenerarSponsors.sponsorConnect()));
-		sponsorsEquipo.put("FRAIKIN BM. GRANOLLERS", List.of(GenerarSponsors.sponsorGameTime(),GenerarSponsors.sponsorSwift()));
-		sponsorsEquipo.put("BM. LOGROÑO LA RIOJA", List.of(GenerarSponsors.sponsorNike()));
-		sponsorsEquipo.put("RECOLETAS AT. VALLADOLID", List.of(GenerarSponsors.sponsorMetro()));
-		sponsorsEquipo.put("BATHCO BM. TORRELAVEGA", List.of());
-		sponsorsEquipo.put("HELVETIA ANAITASUNA", List.of(GenerarSponsors.sponsorConnect()));
-		sponsorsEquipo.put("VIVEROS HEROL BM. NAVA",List.of());
+		sponsorsEquipo.put(1, List.of(GenerarSponsors.sponsorHealth(),GenerarSponsors.sponsorVital()));
+		sponsorsEquipo.put(2, List.of(GenerarSponsors.sponsorNike(), GenerarSponsors.sponsorConnect()));
+		sponsorsEquipo.put(3, List.of(GenerarSponsors.sponsorPuma(),GenerarSponsors.sponsorLocal()));
+		sponsorsEquipo.put(4, List.of(GenerarSponsors.sponsorAdidas()));
+		sponsorsEquipo.put(5, List.of(GenerarSponsors.sponsorStar(),GenerarSponsors.sponsorMetro()));
+		sponsorsEquipo.put(6, List.of(GenerarSponsors.sponsorGameTime(),GenerarSponsors.sponsorSwift()));
+		sponsorsEquipo.put(7, List.of(GenerarSponsors.sponsorConnect()));
+		sponsorsEquipo.put(8,List.of());
 	}
 	
-	public static List<Patrocinador> getSponsorByTeam(String nombreEquipo){
-		return sponsorsEquipo.get(nombreEquipo);
+	public static List<Patrocinador> getSponsorByTeam(Integer posicion_clasificacion){
+		return sponsorsEquipo.get(posicion_clasificacion);
 	}
 }

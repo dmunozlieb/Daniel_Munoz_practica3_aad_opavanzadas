@@ -66,7 +66,7 @@ public class Patrocinador {
 
 	@Override
 	public String toString() {
-		return "\nPatrocinador [id_patrocinador=" + id_patrocinador + ", nombre_patrocinador=" + nombre_patrocinador
+		return "Patrocinador [id_patrocinador=" + id_patrocinador + ", nombre_patrocinador=" + nombre_patrocinador
 				+ ", tipo_patrocinio=" + tipo_patrocinio + ", montoPatrocinio=" + montoPatrocinio + "]";
 	}
 	

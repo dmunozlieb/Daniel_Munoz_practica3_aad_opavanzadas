@@ -18,7 +18,6 @@ import jakarta.persistence.TypedQuery;
 
 public class DataPersist {
 
-//	private static EntityManager entitymanager = ConnectJPA.getEntityManager();
 	private static final Logger LOGGER = LogManager.getLogger(DataPersist.class);
 	private static GestionEntity<Object> gestion = new GestionEntity<>();
 	 
@@ -38,7 +37,6 @@ public class DataPersist {
 	private void persistEquipos() throws PersistenceException {
 		LOGGER.debug(" - - Entrada al método persitEquipos() - - ");
 		for (Equipo equipo : GenerarEquipos.generarEquipos()) {
-//			System.out.println(equipo);
 			gestion.insert(equipo);
 
 		}

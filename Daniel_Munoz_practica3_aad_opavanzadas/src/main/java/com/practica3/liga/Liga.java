@@ -97,11 +97,6 @@ public class Liga {
 		return (int) (Math.random() * 6);
 	}
 
-//	private static void sumarPuntuacion(int posicion_lista, int puntuacion_sumar) {
-//		int puntuacion_total = clasificacion.get(posicion_lista).getPuntuacion();
-//		puntuacion_total += puntuacion_sumar;
-//		clasificacion.get(posicion_lista).setPuntuacion(puntuacion_total);
-//	}
 	
 	private static void empate(int posicion_equipolocal, int posicion_equipovisitante) {
 		int empate_total_local = clasificacion.get(posicion_equipolocal).getPartidos_empatados();

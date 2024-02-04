@@ -40,7 +40,7 @@ public class Equipo {
 	@OneToMany(mappedBy = "equipo",cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	private List<Jugador> jugadores = new ArrayList<>();
 
-	@ManyToMany (cascade = CascadeType.ALL)
+	@ManyToMany (cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinTable(name = "Team_Sponsor", joinColumns = @JoinColumn(name = "id_team"), 
 			inverseJoinColumns = @JoinColumn(name = "id_sponsor"))
 	private List <Patrocinador> patrocinadores = new ArrayList<>();

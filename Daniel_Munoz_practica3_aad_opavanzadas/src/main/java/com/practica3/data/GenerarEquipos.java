@@ -18,7 +18,7 @@ public class GenerarEquipos {
 
 	static {
 		addJugadores();
-		addSponsors(lista_equipos);
+		
 	}
 
 	public static ArrayList<Equipo> generarEquipos() {
@@ -28,24 +28,24 @@ public class GenerarEquipos {
 	private static ArrayList<Equipo> crearEquipos() {
 		
 		return new ArrayList<Equipo>(Arrays.asList(
-				new Equipo("BARÇA", 510200.34,
+				new Equipo("BARÇA", 0,
 						new Estadio("Palau Blaugrana", "Barcelona", LocalDate.parse("23/10/1973", PATTERN))),
-				new Equipo("BIDASOA IRUN", 329000,
+				new Equipo("BIDASOA IRUN", 0,
 						new Estadio("Artaleku", "Irun", LocalDate.parse("12/07/2010", PATTERN))),
-				new Equipo("FRAIKIN BM. GRANOLLERS", 234098.74,
+				new Equipo("FRAIKIN BM. GRANOLLERS", 0,
 						new Estadio("Palau d’Esports de Granollers", "Granollers",
 								LocalDate.parse("20/09/1991", PATTERN))),
-				new Equipo("BM. LOGROÑO LA RIOJA", 240200.22,
+				new Equipo("BM. LOGROÑO LA RIOJA", 0,
 						new Estadio("Palacio de los Deportes de la Rioja", "Logroño",
 								LocalDate.parse("29/04/2003", PATTERN))),
-				new Equipo("RECOLETAS AT. VALLADOLID", 199000,
+				new Equipo("RECOLETAS AT. VALLADOLID", 0,
 						new Estadio("Polideportivo Huerta Del Rey", "Valladolid",
 								LocalDate.parse("17/07/1975", PATTERN))),
-				new Equipo("BATHCO BM. TORRELAVEGA", 125734.67, new Estadio("Pabellón Municipal Vicente Trueba",
+				new Equipo("BATHCO BM. TORRELAVEGA", 0, new Estadio("Pabellón Municipal Vicente Trueba",
 						"Torrelavega", LocalDate.parse("09/02/1986", PATTERN))),
-				new Equipo("HELVETIA ANAITASUNA", 101000.67, new Estadio("Pabellón Anaitasuna",
+				new Equipo("HELVETIA ANAITASUNA", 0, new Estadio("Pabellón Anaitasuna",
 						"Pamplona", LocalDate.parse("19/02/1976", PATTERN))),
-				new Equipo("VIVEROS HEROL BM. NAVA", 86456.67, new Estadio("Pabellón Municipal Guerreros Naveros",
+				new Equipo("VIVEROS HEROL BM. NAVA", 0, new Estadio("Pabellón Municipal Guerreros Naveros",
 						"Nava de la Asunción", LocalDate.parse("22/07/1996", PATTERN)))));
 	}
 
@@ -56,12 +56,4 @@ public class GenerarEquipos {
 		}
 	}
 
-	private static void addSponsors(ArrayList<Equipo> equipos) {
-		for(Equipo equipo:lista_equipos) {
-			List<Patrocinador>sponsors = GenerarSponsorsEquipo.getSponsorByTeam(equipo.getNombre_equipo());
-			equipo.agregarSponsors(sponsors);
-			
-		}
-		
-	}
 }

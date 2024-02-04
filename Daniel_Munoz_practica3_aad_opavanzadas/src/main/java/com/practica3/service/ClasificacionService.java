@@ -5,56 +5,55 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.practica3.data.GenerarSponsorsEquipo;
+import com.practica3.data.PremioRenumeracion;
+import com.practica3.impldao.ClasificacionImplDAO;
 import com.practica3.model.Clasificacion;
 import com.practica3.model.Equipo;
+import com.practica3.model.Patrocinador;
 
 import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 
 public class ClasificacionService<T> {
-	
-	private static double renumeracion_repartir = 100000;
+
 	private static GestionEntity<Object> gestion = new GestionEntity<Object>();
-	
+	private static ClasificacionImplDAO clasificacionDAO = new ClasificacionImplDAO();
+
 	public static void aportar_renumeracion() {
-		for(Clasificacion clasificacion:getClasificacionOrdenada()) {
-			almacenarRenumeracion(clasificacion.getEquipo());	
+		int posicion = 0;
+		for (Clasificacion clasificacion : clasificacionDAO.getClasificacionFinal()) {
+			System.out.println(clasificacion.getEquipo().getRenumeracion());
+			almacenarRenumeracionClasificacion(clasificacion.getEquipo(), ++posicion);
+			addPatrocinios(clasificacion.getEquipo(), posicion);
+			addRenumeracionSponsors(clasificacion.getEquipo());
 			actualizarEquipo(clasificacion.getEquipo());
+			System.out.println(clasificacion.getEquipo().getRenumeracion());
+
 		}
 	}
-	
-	private static List<Clasificacion> getClasificacionOrdenada() {
-		Transaction transaction = null;
-		try (Session session = HibernateUtil.getSession().openSession()){
-			transaction = session.beginTransaction();
-			String queryOrder = "select c from Clasificacion c order by puntuacion desc";
-			Query query = session.createQuery(queryOrder, Clasificacion.class);	
-			List<Clasificacion> clasif_order = query.getResultList();
-			transaction.commit();
-			return clasif_order;
-		}catch (Exception e) {
-			System.err.println("ERROR - "+e.getMessage());
-			transaction.rollback();
-		}
-		return null;
-	}
 
-	public static double getRenumeracion_repartir() {
-		return renumeracion_repartir;
-	}
-
-	public static void setRenumeracion_repartir(double renumeracion_repartir) {
-		ClasificacionService.renumeracion_repartir = renumeracion_repartir;
-	}
-	
-	private static void almacenarRenumeracion(Equipo equipo) {
+	private static void almacenarRenumeracionClasificacion(Equipo equipo, int posicion) {
 		double renumeracion_equipo = 0;
-		renumeracion_equipo = equipo.getRenumeracion()+getRenumeracion_repartir();
-		System.out.println(renumeracion_equipo);
+		renumeracion_equipo = equipo.getRenumeracion() + PremioRenumeracion.valorPremio(posicion);
 		equipo.setRenumeracion(renumeracion_equipo);
-		setRenumeracion_repartir(getRenumeracion_repartir()-10000);
 	}
-	
+
 	private static void actualizarEquipo(Equipo equipo) {
 		gestion.update(equipo);
+	}
+
+	private static void addPatrocinios(Equipo equipo, int posicion) {
+		List<Patrocinador> patrocinadores = GenerarSponsorsEquipo.getSponsorByTeam(posicion);
+		equipo.agregarSponsors(patrocinadores);
+	}
+
+	private static void addRenumeracionSponsors(Equipo equipo) {
+		double renumeracion_equipo;
+		for (Patrocinador patrocinador : equipo.getPatrocinadores()) {
+			renumeracion_equipo = 0;
+			renumeracion_equipo = equipo.getRenumeracion() + patrocinador.getMontoPatrocinio();
+			equipo.setRenumeracion(renumeracion_equipo);
+		}
 	}
 }
