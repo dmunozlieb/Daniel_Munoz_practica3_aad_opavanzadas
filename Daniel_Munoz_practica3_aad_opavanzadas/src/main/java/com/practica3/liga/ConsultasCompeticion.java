@@ -10,8 +10,12 @@ import com.practica3.model.Clasificacion;
 import com.practica3.model.Equipo;
 import com.practica3.model.Partido;
 import com.practica3.model.Patrocinador;
-/*** Esta clase realiza/se encarga ejecutar todas las consultas de la 2 parte. * 
- * @author Daniel Muñoz */
+
+/***
+ * Esta clase realiza/se encarga ejecutar todas las consultas de la 2 parte. *
+ * 
+ * @author Daniel Muñoz
+ */
 
 public class ConsultasCompeticion {
 	private static ClasificacionImplDAO clasificacionDAO = new ClasificacionImplDAO();
@@ -56,11 +60,11 @@ public class ConsultasCompeticion {
 		LOGGER.info(partido.toString());
 		LOGGER.info("##################### FIN Consulta 4 #################################");
 	}
-	
+
 	private static void ejecutarConsulta5() {
 		LOGGER.info("## 5. Equipo con más ingresos y el total. ##");
 		Equipo equipo = clasificacionDAO.getEquipoMaxIngresos();
-		LOGGER.info("Equipo: "+equipo.getNombre_equipo()+" ingresos totales: "+equipo.getRenumeracion());
+		LOGGER.info("Equipo: " + equipo.getNombre_equipo() + " ingresos totales: " + equipo.getRenumeracion());
 		LOGGER.info("##################### FIN Consulta 5 #################################");
 	}
 }

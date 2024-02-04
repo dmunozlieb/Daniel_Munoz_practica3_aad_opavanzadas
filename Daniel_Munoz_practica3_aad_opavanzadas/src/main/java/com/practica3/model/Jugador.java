@@ -10,8 +10,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-/*** Entity Jugador * 
- * @author Daniel Muñoz */
+
+/***
+ * Entity Jugador *
+ * 
+ * @author Daniel Muñoz
+ */
 @Entity
 @Table(name = "Player")
 public class Jugador {
@@ -39,7 +43,8 @@ public class Jugador {
 
 	}
 
-	public Jugador(String nombre, LocalDate fecha_nacimiento, String nacionalidad, String posicion, Integer altura, Integer peso) {
+	public Jugador(String nombre, LocalDate fecha_nacimiento, String nacionalidad, String posicion, Integer altura,
+			Integer peso) {
 
 		this.nombre = nombre;
 		this.fecha_nacimiento = fecha_nacimiento;
@@ -48,8 +53,6 @@ public class Jugador {
 		this.altura = altura;
 		this.peso = peso;
 	}
-
-	
 
 	public LocalDate getFecha_nacimiento() {
 		return fecha_nacimiento;
@@ -117,9 +120,9 @@ public class Jugador {
 
 	@Override
 	public String toString() {
-		return "Jugador [id_jugador=" + id_jugador + ", nombre=" + nombre + ", fecha nacimiento=" + fecha_nacimiento + ", nacionalidad="
-				+ nacionalidad + ", posicion=" + posicion + ", altura=" + altura + ", peso=" + peso + ", equipo="
-				+ equipo + "]";
+		return "Jugador [id_jugador=" + id_jugador + ", nombre=" + nombre + ", fecha nacimiento=" + fecha_nacimiento
+				+ ", nacionalidad=" + nacionalidad + ", posicion=" + posicion + ", altura=" + altura + ", peso=" + peso
+				+ ", equipo=" + equipo + "]";
 	}
 
 }

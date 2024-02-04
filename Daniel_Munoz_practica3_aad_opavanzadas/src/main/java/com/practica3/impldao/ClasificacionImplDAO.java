@@ -15,8 +15,13 @@ import com.practica3.service.HibernateUtil;
 
 import jakarta.persistence.PersistenceException;
 import jakarta.persistence.TypedQuery;
-/*** Esta clase realiza/se encarga de generar consultas relacionadas con la clasificación. * 
- * @author Daniel Muñoz */
+
+/***
+ * Esta clase realiza/se encarga de generar consultas relacionadas con la
+ * clasificación. *
+ * 
+ * @author Daniel Muñoz
+ */
 public class ClasificacionImplDAO implements ConsultaClasificacionDAO {
 
 	private static final Logger LOGGER = LogManager.getLogger(Fichajes.class);
@@ -70,7 +75,8 @@ public class ClasificacionImplDAO implements ConsultaClasificacionDAO {
 			LOGGER.error(e.getMessage());
 		} catch (Exception e) {
 			LOGGER.error(e.getMessage());
-		}		return null;
+		}
+		return null;
 	}
 
 }

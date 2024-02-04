@@ -5,15 +5,19 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.practica3.model.Jugador;
-/*** Esta clase realiza/se encarga de Generar objetos Jugadores. * 
- * @author Daniel Muñoz */
+
+/***
+ * Esta clase realiza/se encarga de Generar objetos Jugadores. *
+ * 
+ * @author Daniel Muñoz
+ */
 
 public class GenerarJugadores {
 
 	private static final DateTimeFormatter PATTERN = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	private static ArrayList<Jugador> jugadores = new ArrayList<>();
+
 	public static List<Jugador> jugadoresBarsa() {
 		return List.of(
 				new Jugador("Pérez de Vargas", LocalDate.parse("10/01/1991", PATTERN), "España", "Portero", 188, 88),
@@ -87,7 +91,8 @@ public class GenerarJugadores {
 	}
 
 	public static List<Jugador> jugadoresTorrelavega() {
-		return List.of(new Jugador("Carlos Calle", LocalDate.parse("22/12/1994", PATTERN), "España", "Portero", 192, 91),
+		return List.of(
+				new Jugador("Carlos Calle", LocalDate.parse("22/12/1994", PATTERN), "España", "Portero", 192, 91),
 				new Jugador("Sergio Crespo", LocalDate.parse("23/08/1996", PATTERN), "España", "Lateral izquierdo", 190,
 						93),
 				new Jugador("Alonso Moreno", LocalDate.parse("01/01/1996", PATTERN), "España", "Lateral derecho", 189,
@@ -98,34 +103,38 @@ public class GenerarJugadores {
 						78),
 				new Jugador("Dani Ramos", LocalDate.parse("08/11/1999", PATTERN), "España", "Pívot", 191, 104));
 	}
-	
+
 	public static List<Jugador> jugadoresHelvetia() {
-		return List.of(new Jugador("Iñaki Martínez", LocalDate.parse("13/10/2000", PATTERN), "España", "Portero", 182, 84),
+		return List.of(
+				new Jugador("Iñaki Martínez", LocalDate.parse("13/10/2000", PATTERN), "España", "Portero", 182, 84),
 				new Jugador("Oleg Kisselev", LocalDate.parse("20/08/1997", PATTERN), "España", "Lateral izquierdo", 199,
 						100),
-				new Jugador("Eduardo Fernandez", LocalDate.parse("01/01/1997", PATTERN), "España", "Lateral derecho", 189,
-						86),
+				new Jugador("Eduardo Fernandez", LocalDate.parse("01/01/1997", PATTERN), "España", "Lateral derecho",
+						189, 86),
 				new Jugador("Niko Martinovic", LocalDate.parse("01/08/2003", PATTERN), "Croacia", "Central", 184, 83),
-				new Jugador("Xavier Gonzalez", LocalDate.parse("10/12/2004", PATTERN), "España", "Extremo derecho", 180, 79),
+				new Jugador("Xavier Gonzalez", LocalDate.parse("10/12/2004", PATTERN), "España", "Extremo derecho", 180,
+						79),
 				new Jugador("Martín Ganuza", LocalDate.parse("03/10/2000", PATTERN), "España", "Extremo izquierdo", 178,
 						76),
 				new Jugador("Antonio Bazan", LocalDate.parse("19/05/1996", PATTERN), "España", "Pívot", 196, 95));
 	}
-	
+
 	public static List<Jugador> jugadoresViveros() {
-		return List.of(new Jugador("Luis De Vega", LocalDate.parse("14/09/1988", PATTERN), "España", "Portero", 190, 89),
-				new Jugador("Jakub Prokop", LocalDate.parse("21/08/1998", PATTERN), "Eslovaquia", "Lateral izquierdo", 191,
-						97),
-				new Jugador("Isaías Guardiola", LocalDate.parse("01/10/1984", PATTERN), "España", "Lateral derecho", 200,
-						104),
+		return List.of(
+				new Jugador("Luis De Vega", LocalDate.parse("14/09/1988", PATTERN), "España", "Portero", 190, 89),
+				new Jugador("Jakub Prokop", LocalDate.parse("21/08/1998", PATTERN), "Eslovaquia", "Lateral izquierdo",
+						191, 97),
+				new Jugador("Isaías Guardiola", LocalDate.parse("01/10/1984", PATTERN), "España", "Lateral derecho",
+						200, 104),
 				new Jugador("Borja Mendez", LocalDate.parse("19/07/2001", PATTERN), "España", "Central", 174, 78),
-				new Jugador("Francisco Ahumada", LocalDate.parse("10/12/2004", PATTERN), "Chile", "Extremo derecho", 180, 79),
+				new Jugador("Francisco Ahumada", LocalDate.parse("10/12/2004", PATTERN), "Chile", "Extremo derecho",
+						180, 79),
 				new Jugador("Dani Perez", LocalDate.parse("20/12/1996", PATTERN), "España", "Extremo izquierdo", 182,
 						80),
 				new Jugador("Gonzalo Carró", LocalDate.parse("09/06/1994", PATTERN), "España", "Pívot", 194, 93));
 	}
-	
-	public static ArrayList<Jugador> allJugadores(){
+
+	public static ArrayList<Jugador> allJugadores() {
 		jugadores.addAll(jugadoresBarsa());
 		jugadores.addAll(jugadoresBidasoa());
 		jugadores.addAll(jugadoresGranollers());

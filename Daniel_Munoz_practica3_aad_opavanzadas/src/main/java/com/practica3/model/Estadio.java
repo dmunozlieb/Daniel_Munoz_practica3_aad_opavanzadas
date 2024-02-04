@@ -8,8 +8,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-/*** Entity Estadio * 
- * @author Daniel Muñoz */
+
+/***
+ * Entity Estadio *
+ * 
+ * @author Daniel Muñoz
+ */
 @Entity
 @Table(name = "stadium")
 public class Estadio {
@@ -23,9 +27,9 @@ public class Estadio {
 	private String ciudad_estadio;
 	@Column(name = "opening_date")
 	private LocalDate fecha_inauguracion;
-	
+
 	public Estadio() {
-		
+
 	}
 
 	public Estadio(String nombre_estadio, String ciudad_estadio, LocalDate fecha_inauguracion) {
@@ -63,7 +67,6 @@ public class Estadio {
 		return fecha_inauguracion;
 	}
 
-	
 	public void setFecha_inauguracion(LocalDate fecha_inauguracion) {
 		this.fecha_inauguracion = fecha_inauguracion;
 	}

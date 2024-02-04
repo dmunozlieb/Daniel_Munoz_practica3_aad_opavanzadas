@@ -2,13 +2,18 @@ package com.practica3.data;
 
 import java.util.HashMap;
 import java.util.Map;
-/*** Esta clase realiza/se encarga de relacionar cantidad de premio a posición en clasificación. * 
- * @author Daniel Muñoz */
+
+/***
+ * Esta clase realiza/se encarga de relacionar cantidad de premio a posición en
+ * clasificación. *
+ * 
+ * @author Daniel Muñoz
+ */
 
 public class PremioRenumeracion {
-	
+
 	private static Map<Integer, Integer> premios_renumeracion = new HashMap<>();
-	
+
 	static {
 		premios_renumeracion.put(1, 100000);
 		premios_renumeracion.put(2, 90000);
@@ -19,7 +24,7 @@ public class PremioRenumeracion {
 		premios_renumeracion.put(7, 40000);
 		premios_renumeracion.put(8, 30000);
 	}
-	
+
 	public static Integer valorPremio(Integer posicion) {
 		return premios_renumeracion.get(posicion);
 	}

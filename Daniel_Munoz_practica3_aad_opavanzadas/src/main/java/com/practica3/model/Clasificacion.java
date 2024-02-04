@@ -8,8 +8,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-/*** Entity Clasificación * 
- * @author Daniel Muñoz */
+
+/***
+ * Entity Clasificación *
+ * 
+ * @author Daniel Muñoz
+ */
 @Entity
 @Table(name = "asobal_league")
 public class Clasificacion {
@@ -22,21 +26,20 @@ public class Clasificacion {
 	private Equipo equipo;
 	@Column(name = "points", nullable = false, precision = 2)
 	private Integer puntuacion;
-	@Column(name = "W", nullable = false,  precision = 2)
+	@Column(name = "W", nullable = false, precision = 2)
 	private Integer partidos_ganados;
-	@Column(name = "E", nullable = false,  precision = 2)
+	@Column(name = "E", nullable = false, precision = 2)
 	private Integer partidos_empatados;
-	@Column(name = "D", nullable = false,  precision = 2)
+	@Column(name = "D", nullable = false, precision = 2)
 	private Integer partidos_perdidos;
 
 	public Clasificacion() {
 
 	}
 
-	public Clasificacion(Equipo equipo, Integer puntuacion, Integer partidos_ganados,
-			Integer partidos_empatados, Integer partidos_perdidos) {
+	public Clasificacion(Equipo equipo, Integer puntuacion, Integer partidos_ganados, Integer partidos_empatados,
+			Integer partidos_perdidos) {
 
-		
 		this.equipo = equipo;
 		this.puntuacion = puntuacion;
 		this.partidos_ganados = partidos_ganados;
@@ -51,8 +54,6 @@ public class Clasificacion {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	
 
 	public Equipo getEquipo() {
 		return equipo;
@@ -96,9 +97,9 @@ public class Clasificacion {
 
 	@Override
 	public String toString() {
-		return "Clasificacion [id=" + id + ", equipo=" + equipo + ", puntuacion="
-				+ puntuacion + ", partidos_ganados=" + partidos_ganados + ", partidos_empatados=" + partidos_empatados
-				+ ", partidos_perdidos=" + partidos_perdidos + "]";
+		return "Clasificacion [id=" + id + ", equipo=" + equipo + ", puntuacion=" + puntuacion + ", partidos_ganados="
+				+ partidos_ganados + ", partidos_empatados=" + partidos_empatados + ", partidos_perdidos="
+				+ partidos_perdidos + "]";
 	}
 
 }

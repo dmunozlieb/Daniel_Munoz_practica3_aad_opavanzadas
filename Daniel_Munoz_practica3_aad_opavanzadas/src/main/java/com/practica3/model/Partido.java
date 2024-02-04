@@ -9,8 +9,12 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-/*** Entity Partido * 
- * @author Daniel Muñoz */
+
+/***
+ * Entity Partido *
+ * 
+ * @author Daniel Muñoz
+ */
 @Entity
 @Table(name = "Matchs")
 public class Partido {
@@ -38,8 +42,8 @@ public class Partido {
 
 	}
 
-	public Partido(Integer num_jornada,Equipo equipoLocal, Equipo equipoVisitante, Integer resultado_local, Integer resultado_visitante,
-			Jugador jugador) {
+	public Partido(Integer num_jornada, Equipo equipoLocal, Equipo equipoVisitante, Integer resultado_local,
+			Integer resultado_visitante, Jugador jugador) {
 		this.num_jornada = num_jornada;
 		this.equipoLocal = equipoLocal;
 		this.equipoVisitante = equipoVisitante;

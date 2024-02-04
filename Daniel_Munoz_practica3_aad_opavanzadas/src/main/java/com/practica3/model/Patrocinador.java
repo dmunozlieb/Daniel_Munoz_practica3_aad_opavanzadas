@@ -6,28 +6,32 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-/*** Entity Patrocinador * 
- * @author Daniel Muñoz */
+
+/***
+ * Entity Patrocinador *
+ * 
+ * @author Daniel Muñoz
+ */
 @Entity
-@Table (name = "sponsor")
+@Table(name = "sponsor")
 public class Patrocinador {
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column (name = "id_sponsor")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_sponsor")
 	private Long id_patrocinador;
-	@Column (name = "sponsor_name")
+	@Column(name = "sponsor_name")
 	private String nombre_patrocinador;
-	@Column (name = "sponsor_type")
+	@Column(name = "sponsor_type")
 	private String tipo_patrocinio;
-	@Column (name = "sponsor_amount", scale = 3)
+	@Column(name = "sponsor_amount", scale = 3)
 	private Double montoPatrocinio;
-	
+
 	public Patrocinador() {
-		
+
 	}
 
 	public Patrocinador(String nombre_patrocinador, String tipo_patrocinio, double montoPatrocinio) {
-		
+
 		this.nombre_patrocinador = nombre_patrocinador;
 		this.tipo_patrocinio = tipo_patrocinio;
 		this.montoPatrocinio = montoPatrocinio;
@@ -70,6 +74,5 @@ public class Patrocinador {
 		return "Patrocinador [id_patrocinador=" + id_patrocinador + ", nombre_patrocinador=" + nombre_patrocinador
 				+ ", tipo_patrocinio=" + tipo_patrocinio + ", montoPatrocinio=" + montoPatrocinio + "]";
 	}
-	
-	
+
 }

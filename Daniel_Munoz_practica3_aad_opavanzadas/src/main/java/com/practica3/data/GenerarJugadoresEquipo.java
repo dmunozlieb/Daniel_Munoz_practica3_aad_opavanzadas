@@ -4,12 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.practica3.model.Jugador;
-/*** Esta clase realiza/se encarga de relacionar una lista de jugadores a un equipo. * 
- * @author Daniel Muñoz */
+
+/***
+ * Esta clase realiza/se encarga de relacionar una lista de jugadores a un
+ * equipo. *
+ * 
+ * @author Daniel Muñoz
+ */
 
 public class GenerarJugadoresEquipo {
-	private static HashMap<String, List<Jugador>>jugadoresPorEquipo = new HashMap<String, List<Jugador>>();
-	
+	private static HashMap<String, List<Jugador>> jugadoresPorEquipo = new HashMap<String, List<Jugador>>();
+
 	static {
 		jugadoresPorEquipo.put("BARÇA", GenerarJugadores.jugadoresBarsa());
 		jugadoresPorEquipo.put("BIDASOA IRUN", GenerarJugadores.jugadoresBidasoa());
@@ -20,8 +25,8 @@ public class GenerarJugadoresEquipo {
 		jugadoresPorEquipo.put("HELVETIA ANAITASUNA", GenerarJugadores.jugadoresHelvetia());
 		jugadoresPorEquipo.put("VIVEROS HEROL BM. NAVA", GenerarJugadores.jugadoresViveros());
 	}
-	
-	public static List<Jugador> getJugadoresByTeam(String nombreEquipo){
+
+	public static List<Jugador> getJugadoresByTeam(String nombreEquipo) {
 		return jugadoresPorEquipo.get(nombreEquipo);
 	}
 }
