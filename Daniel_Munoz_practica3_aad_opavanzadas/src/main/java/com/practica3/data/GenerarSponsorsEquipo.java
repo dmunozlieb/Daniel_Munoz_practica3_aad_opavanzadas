@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.practica3.model.Patrocinador;
+/*** Esta clase realiza/se encarga de relacionar sponsors a posición en clasificación. * 
+ * @author Daniel Muñoz */
 
 public class GenerarSponsorsEquipo {
 	private static HashMap<Integer, List<Patrocinador>> sponsorsEquipo = new HashMap<Integer, List<Patrocinador>>();

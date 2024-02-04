@@ -11,7 +11,8 @@ import com.practica3.service.HibernateUtil;
 
 import jakarta.persistence.PersistenceException;
 import jakarta.persistence.TypedQuery;
-
+/*** Esta clase realiza/se encarga de generar consultas relacionadas con los partidos. * 
+ * @author Daniel Muñoz */
 public class PartidoImplDAO implements ConsultaPartidoDAO {
 	private static final Logger LOGGER = LogManager.getLogger(Fichajes.class);
 

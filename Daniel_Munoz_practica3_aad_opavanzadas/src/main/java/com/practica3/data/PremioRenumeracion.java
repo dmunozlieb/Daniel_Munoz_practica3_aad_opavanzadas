@@ -2,6 +2,8 @@ package com.practica3.data;
 
 import java.util.HashMap;
 import java.util.Map;
+/*** Esta clase realiza/se encarga de relacionar cantidad de premio a posición en clasificación. * 
+ * @author Daniel Muñoz */
 
 public class PremioRenumeracion {
 	

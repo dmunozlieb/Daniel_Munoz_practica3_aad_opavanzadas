@@ -9,30 +9,35 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/***
+ * Entity Competicion *
+ * 
+ * @author Daniel Muñoz
+ */
 @Entity
 @Table(name = "competition")
 public class Competicion {
-	@Id @GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column (name = "competition_name")
+	@Column(name = "competition_name")
 	private String nombreCompeticion;
-	@Column (name = "start_date")
+	@Column(name = "start_date")
 	private LocalDate fechaCreacion;
-	@Column (name = "numbers_of_matchday")
+	@Column(name = "numbers_of_matchday")
 	private int numJornadas;
-	@Column (name = "numbers_of_teams")
+	@Column(name = "numbers_of_teams")
 	private int numEquipos;
-	
-		
+
 	public Competicion() {
-		
+
 	}
 
-	public Competicion(String nombreCompeticion, LocalDate fechaCreacion, int numJornadas,int numEquipos) {		
+	public Competicion(String nombreCompeticion, LocalDate fechaCreacion, int numJornadas, int numEquipos) {
 		this.nombreCompeticion = nombreCompeticion;
 		this.fechaCreacion = fechaCreacion;
 		this.numJornadas = numJornadas;
-		this.numEquipos = numEquipos;	
+		this.numEquipos = numEquipos;
 	}
 
 	public Long getId() {
@@ -72,6 +77,5 @@ public class Competicion {
 		return "Competicion [id=" + id + ", nombreCompeticion=" + nombreCompeticion + ", fechaCreacion=" + fechaCreacion
 				+ ", numEquipos=" + numEquipos + "]";
 	}
-	
-	
+
 }

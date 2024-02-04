@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.practica3.model.Jugador;
+/*** Esta clase realiza/se encarga de relacionar una lista de jugadores a un equipo. * 
+ * @author Daniel Muñoz */
 
 public class GenerarJugadoresEquipo {
 	private static HashMap<String, List<Jugador>>jugadoresPorEquipo = new HashMap<String, List<Jugador>>();

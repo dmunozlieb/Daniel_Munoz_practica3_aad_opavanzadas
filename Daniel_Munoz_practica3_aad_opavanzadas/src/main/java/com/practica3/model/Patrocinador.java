@@ -6,7 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+/*** Entity Patrocinador * 
+ * @author Daniel Muñoz */
 @Entity
 @Table (name = "sponsor")
 public class Patrocinador {

@@ -10,6 +10,8 @@ import com.practica3.model.Equipo;
 import com.practica3.model.Jugador;
 import com.practica3.service.GestionEntity;
 
+/*** Esta clase realiza/se encarga de realizar la simulación de los fichajes. * 
+ * @author Daniel Muñoz */
 
 public class Fichajes <T>{
 	

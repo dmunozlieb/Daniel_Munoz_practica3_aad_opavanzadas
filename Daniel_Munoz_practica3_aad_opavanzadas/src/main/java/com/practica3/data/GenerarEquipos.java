@@ -11,7 +11,8 @@ import com.practica3.model.Estadio;
 import com.practica3.model.Jugador;
 import com.practica3.model.Patrocinador;
 
-
+/*** Esta clase realiza/se encarga de Generar objetos Equipos. * 
+ * @author Daniel Muñoz */
 public class GenerarEquipos {
 	private static final DateTimeFormatter PATTERN = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	private static ArrayList<Equipo> lista_equipos = crearEquipos();

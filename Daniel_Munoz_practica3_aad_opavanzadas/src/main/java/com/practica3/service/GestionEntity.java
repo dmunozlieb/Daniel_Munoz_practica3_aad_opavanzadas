@@ -15,6 +15,13 @@ import jakarta.persistence.PersistenceException;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
+/***
+ * Esta clase realiza/se encarga de realizar operaciones CRUD de manera
+ * genérica. *
+ * 
+ * @author Daniel Muñoz
+ */
+
 public class GestionEntity<T> implements GestionDAO<T> {
 
 	private static final Logger LOGGER = LogManager.getLogger(GestionEntity.class);
@@ -22,7 +29,7 @@ public class GestionEntity<T> implements GestionDAO<T> {
 	@Override
 	public void insert(T o1) {
 		Transaction transaction = null;
-		try(Session session = HibernateUtil.getSession().openSession();) {
+		try (Session session = HibernateUtil.getSession().openSession();) {
 			transaction = session.beginTransaction();
 			session.persist(o1);
 			transaction.commit();
@@ -38,7 +45,7 @@ public class GestionEntity<T> implements GestionDAO<T> {
 	@Override
 	public <T> void remove(T o1) {
 		Transaction transaction = null;
-		try(Session session = HibernateUtil.getSession().openSession();) {
+		try (Session session = HibernateUtil.getSession().openSession();) {
 			transaction = session.beginTransaction();
 			session.remove(o1);
 			transaction.commit();
@@ -56,10 +63,9 @@ public class GestionEntity<T> implements GestionDAO<T> {
 	@Override
 	public <T> List<T> findAll(Class<T> className) {
 		Transaction transaction = null;
-		try(Session session = HibernateUtil.getSession().openSession()) {
+		try (Session session = HibernateUtil.getSession().openSession()) {
 			transaction = session.beginTransaction();
-			TypedQuery<T> query = session.createQuery("select a from " + className.getSimpleName() + " a",
-					className);
+			TypedQuery<T> query = session.createQuery("select a from " + className.getSimpleName() + " a", className);
 			List<T> allData = query.getResultList();
 			transaction.commit();
 			return allData;
@@ -76,7 +82,7 @@ public class GestionEntity<T> implements GestionDAO<T> {
 	@Override
 	public <T> T find(Class<T> className, int id) {
 		Transaction transaction = null;
-		try(Session session = HibernateUtil.getSession().openSession()){
+		try (Session session = HibernateUtil.getSession().openSession()) {
 			transaction = session.beginTransaction();
 			T object = session.get(className, id);
 			transaction.commit();
@@ -94,7 +100,7 @@ public class GestionEntity<T> implements GestionDAO<T> {
 	@Override
 	public <T> void update(T o1) {
 		Transaction transaction = null;
-		try(Session session = HibernateUtil.getSession().openSession()) {
+		try (Session session = HibernateUtil.getSession().openSession()) {
 			transaction = session.beginTransaction();
 			session.merge(o1);
 			transaction.commit();
@@ -109,7 +115,5 @@ public class GestionEntity<T> implements GestionDAO<T> {
 		}
 
 	}
-
-	
 
 }

@@ -15,6 +15,13 @@ import com.practica3.model.Patrocinador;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
+/***
+ * Esta clase realiza/se encarga de repartir los premios y sponsors a cada
+ * equipo según la clasificación. *
+ * 
+ * @author Daniel Muñoz
+ */
+
 public class ClasificacionService<T> {
 
 	private static GestionEntity<Object> gestion = new GestionEntity<Object>();

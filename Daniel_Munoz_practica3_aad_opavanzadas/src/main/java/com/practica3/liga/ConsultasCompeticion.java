@@ -10,6 +10,8 @@ import com.practica3.model.Clasificacion;
 import com.practica3.model.Equipo;
 import com.practica3.model.Partido;
 import com.practica3.model.Patrocinador;
+/*** Esta clase realiza/se encarga ejecutar todas las consultas de la 2 parte. * 
+ * @author Daniel Muñoz */
 
 public class ConsultasCompeticion {
 	private static ClasificacionImplDAO clasificacionDAO = new ClasificacionImplDAO();

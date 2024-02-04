@@ -5,7 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import com.practica3.model.Competicion;
-
+/*** Esta clase realiza/se encarga de Generar objetos competición. * 
+ * @author Daniel Muñoz */
 public class GenerarCompeticion {
 	private static final DateTimeFormatter PATTERN = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	

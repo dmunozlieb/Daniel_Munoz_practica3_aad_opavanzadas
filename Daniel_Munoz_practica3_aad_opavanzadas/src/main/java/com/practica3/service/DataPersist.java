@@ -16,12 +16,17 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceException;
 import jakarta.persistence.TypedQuery;
 
+/***
+ * Esta clase realiza/se encarga de persistir todos los datos a la base de datos
+ * generados al inicio del programa. *
+ * 
+ * @author Daniel Muñoz
+ */
 public class DataPersist {
 
 	private static final Logger LOGGER = LogManager.getLogger(DataPersist.class);
 	private static GestionEntity<Object> gestion = new GestionEntity<>();
-	 
-	
+
 	public void dataPersist() {
 		try {
 			persistEquipos();

@@ -22,6 +22,11 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 
+/***
+ * Entity Equipo *
+ * 
+ * @author Daniel Muñoz
+ */
 @Entity
 @Table(name = "Team")
 public class Equipo {
@@ -33,21 +38,20 @@ public class Equipo {
 	private String nombre_equipo;
 	@Column(name = "balance", nullable = true, scale = 3)
 	private double renumeracion;
-	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REFRESH})
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH })
 	@JoinColumn(name = "id_stadium")
 	private Estadio estadio;
-	
-	@OneToMany(mappedBy = "equipo",cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REFRESH}, fetch = FetchType.EAGER)
+
+	@OneToMany(mappedBy = "equipo", cascade = { CascadeType.PERSIST, CascadeType.MERGE,
+			CascadeType.REFRESH }, fetch = FetchType.EAGER)
 	private List<Jugador> jugadores = new ArrayList<>();
 
-	@ManyToMany (cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinTable(name = "Team_Sponsor", joinColumns = @JoinColumn(name = "id_team"), 
-			inverseJoinColumns = @JoinColumn(name = "id_sponsor"))
-	private List <Patrocinador> patrocinadores = new ArrayList<>();
-	
-	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable(name = "Team_Sponsor", joinColumns = @JoinColumn(name = "id_team"), inverseJoinColumns = @JoinColumn(name = "id_sponsor"))
+	private List<Patrocinador> patrocinadores = new ArrayList<>();
+
 	public Equipo() {
-		
+
 	}
 
 	public Equipo(String nombre_equipo, double renumeracion) {
@@ -55,11 +59,11 @@ public class Equipo {
 		this.nombre_equipo = nombre_equipo;
 		this.renumeracion = renumeracion;
 	}
-	
+
 	public Equipo(String nombre_equipo, double renumeracion, Estadio estadio) {
-		this(nombre_equipo,renumeracion);
+		this(nombre_equipo, renumeracion);
 		this.estadio = estadio;
-		
+
 	}
 
 	public double getRenumeracion() {
@@ -89,7 +93,7 @@ public class Equipo {
 	public List<Jugador> getJugadores() {
 		return jugadores;
 	}
-	
+
 	public Estadio getEstadio() {
 		return estadio;
 	}
@@ -110,7 +114,7 @@ public class Equipo {
 		jugadores.add(jugador);
 		jugador.setEquipo(this);
 	}
-	
+
 	public void agregarSponsor(Patrocinador patrocinador) {
 		patrocinadores.add(patrocinador);
 	}
@@ -120,11 +124,11 @@ public class Equipo {
 			agregarSponsor(sponsor);
 		}
 	}
-	
+
 	public void eliminarSponsor(Patrocinador patrocinador) {
 		patrocinadores.remove(patrocinador);
 	}
-	
+
 	public void agregarJugadores(List<Jugador> list) {
 		for (Jugador jugador : list) {
 			agregarJugador(jugador);
@@ -148,6 +152,4 @@ public class Equipo {
 				+ ", estadio=" + estadio + "]";
 	}
 
-	
-	
 }

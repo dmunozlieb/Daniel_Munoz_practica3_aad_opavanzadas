@@ -4,85 +4,89 @@ import java.util.ArrayList;
 
 import com.practica3.model.Patrocinador;
 
+/***
+ * Esta clase realiza/se encarga de Generar objetos patrocinadores. *
+ * 
+ * @author Daniel Muñoz
+ */
 public class GenerarSponsors {
-	
+
 	private static ArrayList<Patrocinador> sponsors = new ArrayList<>();
-	
-	
+
 	public static Patrocinador sponsorNike() {
-		Patrocinador sponsorNike = new Patrocinador("Nike Sportswear","Indumentaria y Equipamiento",500000);
-		sponsors.add(sponsorNike);
-		return sponsorNike;		
+
+		return obtenerOCrearPatrocinador("Nike Sportswear", "Indumentaria y Equipamiento", 500000);
 	}
-	
+
 	public static Patrocinador sponsorPuma() {
-		Patrocinador sponsorPuma = new Patrocinador("Puma Handball Performance","Indumentaria y Equipamiento",400000);
-		sponsors.add(sponsorPuma);
-		return sponsorPuma;		
+
+		return obtenerOCrearPatrocinador("Puma Handball Performance", "Indumentaria y Equipamiento", 400000);
 	}
-	
+
 	public static Patrocinador sponsorLocal() {
-		Patrocinador sponsorCafe = new Patrocinador("Café del Centro","Local",50000);
-		sponsors.add(sponsorCafe);
-		return sponsorCafe;		
+
+		return obtenerOCrearPatrocinador("Café del Centro", "Local", 50000);
 	}
-	
+
 	public static Patrocinador sponsorHealth() {
-		Patrocinador sponsorHealth = new Patrocinador("ProHealth Supplements","Nutrición",800000);
-		sponsors.add(sponsorHealth);
-		return sponsorHealth;		
+
+		return obtenerOCrearPatrocinador("ProHealth Supplements", "Nutrición", 800000);
 	}
-	
+
 	public static Patrocinador sponsorAdidas() {
-		Patrocinador sponsorAdidas = new Patrocinador("Adidas Handball Gear","Indumentaria y Equipamiento",450000);
-		sponsors.add(sponsorAdidas);
-		return sponsorAdidas;		
+
+		return obtenerOCrearPatrocinador("Adidas Handball Gear", "Indumentaria y Equipamiento", 450000);
 	}
-	
+
 	public static Patrocinador sponsorEnergy() {
-		Patrocinador sponsorEnergy = new Patrocinador("PowerQuench Sports Drinks","Bebidas Energéticas",65000);
-		sponsors.add(sponsorEnergy);
-		return sponsorEnergy;		
+
+		return obtenerOCrearPatrocinador("PowerQuench Sports Drinks", "Bebidas Energéticas", 65000);
 	}
-	
+
 	public static Patrocinador sponsorSwift() {
-		Patrocinador sponsorSwift = new Patrocinador("Swift Travel Services","Transporte",40000);
-		sponsors.add(sponsorSwift);
-		return sponsorSwift;		
+
+		return obtenerOCrearPatrocinador("Swift Travel Services", "Transporte", 40000);
 	}
-	
+
 	public static Patrocinador sponsorMetro() {
-		Patrocinador sponsorMetro = new Patrocinador("MetroMovers Transport","Transporte",45000);
-		sponsors.add(sponsorMetro);
-		return sponsorMetro;		
+
+		return obtenerOCrearPatrocinador("MetroMovers Transport", "Transporte", 45000);
 	}
-	
+
 	public static Patrocinador sponsorStar() {
-		Patrocinador sponsorStar = new Patrocinador("Star Entertainment Group","Entretenimiento",200000);
-		sponsors.add(sponsorStar);
-		return sponsorStar;		
+
+		return obtenerOCrearPatrocinador("Star Entertainment Group", "Entretenimiento", 200000);
 	}
-	
+
 	public static Patrocinador sponsorGameTime() {
-		Patrocinador sponsorGameTime = new Patrocinador("GameTime Interactive","Entretenimiento",180000);
-		sponsors.add(sponsorGameTime);
-		return sponsorGameTime;		
+
+		return obtenerOCrearPatrocinador("GameTime Interactive", "Entretenimiento", 180000);
 	}
-	
+
 	public static Patrocinador sponsorVital() {
-		Patrocinador sponsorVital = new Patrocinador("VitalCare Wellness Clinic","Salud",90000);
-		sponsors.add(sponsorVital);
-		return sponsorVital;		
+
+		return obtenerOCrearPatrocinador("VitalCare Wellness Clinic", "Salud", 90000);
 	}
-	
+
 	public static Patrocinador sponsorConnect() {
-		Patrocinador sponsorConnect = new Patrocinador("ConnectX Technologies","Tecnológico",100000);
-		sponsors.add(sponsorConnect);
-		return sponsorConnect;		
+
+		return obtenerOCrearPatrocinador("ConnectX Technologies", "Tecnológico", 100000);
 	}
-	
-	public static ArrayList<Patrocinador> allSponsors(){
+
+	private static Patrocinador obtenerOCrearPatrocinador(String nombre, String categoria, int monto) {
+		for (Patrocinador existente : sponsors) {
+			if (existente.getNombre_patrocinador().equals(nombre)) {
+				return existente;
+			}
+		}
+
+		Patrocinador nuevoPatrocinador = new Patrocinador(nombre, categoria, monto);
+		sponsors.add(nuevoPatrocinador);
+		return nuevoPatrocinador;
+	}
+
+	public static ArrayList<Patrocinador> allSponsors() {
 		return sponsors;
 	}
-	
+
 }
